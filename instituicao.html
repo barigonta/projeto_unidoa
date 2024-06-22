@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniDoa - Cadastre sua Instituição</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="conheca.html">Conheça</a></li>
+                    <li><a href="doacao.html">Faça sua Doação</a></li>
+                    <li><a href="instituicao.html">Cadastre sua Instituição</a></li>
+                    <li>
+                        <a href="#"><img src="images/br.png" alt="Português" class="flag"></a>
+                        <a href="#"><img src="images/us.png" alt="English" class="flag"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Cadastre sua Instituição</h1>
+            <form onsubmit="return submitInstitutionForm(event)">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" name="address" required>
+                
+                <label for="city">Cidade:</label>
+                <input type="text" id="city" name="city" required>
+                
+                <label for="state">Estado:</label>
+                <input type="text" id="state" name="state" required>
+
+                <label for="fone">Telefone:</label>
+                <input type="text" id="fone" name="fone" required>
+                
+                <button type="submit">Cadastrar</button>
+            </form>
+            <p class="note">Ao clicar em cadastrar, você confirma que aceita os termos de inscrição e que é responsável pelos dados inseridos.</p>
+            <p class="disclaimer">Os dados cadastrados serão avaliados por um administrador e verificados com os órgãos competentes da região.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 UniDoa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        function submitInstitutionForm(event) {
+            event.preventDefault();
+            alert("Obrigado por se cadastrar, logo logo iremos entrar em contato.");
+        }
+    </script>
+</body>
+</html>

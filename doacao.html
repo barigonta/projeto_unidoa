@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniDoa - Faça sua Doação</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="conheca.html">Conheça</a></li>
+                    <li><a href="doacao.html">Faça sua Doação</a></li>
+                    <li><a href="instituicao.html">Cadastre sua Instituição</a></li>
+                    <li>
+                        <a href="#"><img src="images/br.png" alt="Português" class="flag"></a>
+                        <a href="#"><img src="images/us.png" alt="English" class="flag"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Faça sua Doação</h1>
+            <form onsubmit="return submitForm(event)">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="institution">Instituição de Destino:</label>
+                <select id="institution" name="institution" required>
+                    <option value="escola_a">Escola A</option>
+                    <option value="escola_b">Escola B</option>
+                </select>
+
+                <label for="delivery_date">Data Prevista de Entrega:</label>
+                <input type="date" id="delivery_date" name="delivery_date" required>
+                
+                <label for="type">Tipo de Peça:</label>
+                <select id="type" name="type" required>
+                    <option value="camisa">Camisa</option>
+                    <option value="calca">Calça</option>
+                    <option value="shorts">Shorts</option>
+                    <option value="saia">Saia</option>
+                    <option value="blusa">Blusa</option>
+                    <option value="casaco">Casaco</option>
+                </select>
+                
+                <label for="size">Tamanho:</label>
+                <input type="text" id="size" name="size" required>
+                
+                <label for="condition">Estado de Conservação:</label>
+                <select id="condition" name="condition" required>
+                    <option value="novo">Novo</option>
+                    <option value="pouco_usado">Pouco Usado</option>
+                    <option value="usado">Usado</option>
+                    <option value="avariado">Com Pequenas Avarias</option>
+                </select>
+                
+                <button type="submit">Enviar Doação</button>
+            </form>
+            <p class="note">A(s) peça(s) doada(s) devem ser entregas na instituição indicada e isso irá ajudar uma ou muitas família(s).</p>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 UniDoa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            alert("Registro incluído com sucesso! Agradecemos sua doação e aguardamos ansiosamente pelas roupas.");
+        }
+    </script>
+</body>
+</html>
