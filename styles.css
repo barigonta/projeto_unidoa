@@ -12,12 +12,6 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
-.container-conheca {
-    width: 90%;
-    max-width: auto;
-    margin: 0 auto;
-    padding: 20px;
-}
 
 /* Header Styles */
 header {
@@ -69,14 +63,31 @@ header nav ul li img.flag {
     text-align: center;
 }
 
-.carousel img {
-    display: none;
-    width: 90%;
-    height: 40vh;
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 40vh; /* Altura ajustada para o carrossel */
+    overflow: hidden;
 }
 
-.carousel img:first-child {
-    display: block;
+.carousel img {
+    width: 100%; /* A imagem ocupará toda a largura do contêiner do carrossel */
+    height: 100%; /* A imagem ocupará toda a altura do contêiner do carrossel */
+    object-fit: cover; /* Para manter a proporção da imagem */
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
+
+/* Hero Content */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
 }
 
 .hero h1 {
@@ -118,15 +129,15 @@ header nav ul li img.flag {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o conteúdo */
 }
 
 .sections section img {
-    width: 30%;
-    height: 400px;
-    padding: 10px;
+    width: 30%; /* Ajusta a largura da imagem para ocupar 100% do seu contêiner */
+    height: auto; /* A altura será ajustada automaticamente conforme a largura */
+    max-width: 50%; /* Garante que a imagem não ultrapasse o contêiner pai */
     border-radius: 5px;
     margin-top: 10px;
-    float: center;
 }
 
 /* Form Styles */
