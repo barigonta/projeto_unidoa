@@ -14,7 +14,12 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 def inserir_doacao(nome, instituicao, data_entrega, tipo, tamanho, sex, quantidade, condicao):
-    sql = "INSERT INTO doacoes (Upper(substr(nome, 1,1)) as nome, instituicao, data_entrega, tipo, Upper(tamanho), sex, quantidade, condicao) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    sql = """INSERT INTO doacoes (
+            concat(Upper(substr(nome, 1,1)), lower(substr(nome, 2,length(nome)))) as nome, 
+            instituicao, data_entrega, tipo, 
+            concat(Upper(substr(tamanho, 1,1)), lower(substr(tamanho, 2,length(tamanho)))) as tamanho, 
+            sex, quantidade, condicao
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s)"""
     val = (nome, instituicao, data_entrega, tipo, tamanho, quantidade, condicao)
     mycursor.execute(sql, val)
     mydb.commit()

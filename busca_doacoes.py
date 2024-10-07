@@ -23,7 +23,7 @@ myresult = mycursor.fetchall()
 
 
 env = Environment(loader=FileSystemLoader('.'))
-template = env.get_template('template.html')
+template = env.get_template('template_listagem.html')
 template_vars = {'doacoes': myresult}
 
 # Renderizar o template e salvar o resultado em um novo arquivo HTML
