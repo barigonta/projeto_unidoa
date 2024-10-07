@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniformes Disponíveis - UniDoa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="conheca.html">Conheça</a></li>
+                <li><a href="doacao.html">Faça sua Doação</a></li>
+                <li><a href="instituicao.html">Cadastre sua Instituição</a></li>
+                <li><a href="listagem.html">Itens Disponíveis</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <div class="container">
+        <h1>Uniformes Disponíveis</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo da Peça</th>
+                    <th>Tamanho</th>
+                    <th>Sexo (M/F)</th>
+                    <th>Instituição de Ensino</th>
+                    <th>Cidade</th>
+                    <th>Estado de Conservação</th>
+                    <th>Quantidade</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for doacao in dados %}
+                <tr>
+                    <td>{{ doacao.tipo }}</td>
+                    <td>{{ doacao.tamanho }}</td>
+                    <td>{{ doacao.sex }}</td>
+                    <td>{{ doacao.instituicao }}</td>
+                    <td>{{ doacao.cidade_escola }}</td>
+                    <td>{{ doacao.quantidade }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 UniDoa. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

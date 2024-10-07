@@ -1,234 +1,194 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
+/* Resetting Default Styles */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header Styles */
+/* Header Styling */
 header {
-    background-color: #4CAF50;
+    background: #2c3e50;
+    color: #ecf0f1;
     padding: 10px 0;
 }
 
 header nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul li {
-    margin: 5px 0;
+    margin: 0 15px;
 }
 
 header nav ul li a {
-    color: white;
+    color: #ecf0f1;
     text-decoration: none;
-    padding: 10px 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    background-color: #45a049;
-    border-radius: 5px;
+    color: #e74c3c;
 }
 
-header nav ul li img.flag {
-    width: 30px;
-    height: 20px;
-    margin: 0 5px;
-}
-
-/* Hero Section Styles */
+/* Hero Section Styling */
 .hero {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    background: url('hero.jpg') no-repeat center center/cover;
+    background: url('images/slide1.jpeg') no-repeat center center/cover;
+    height: 80vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #fff;
     text-align: center;
-}
-
-.carousel {
     position: relative;
-    width: 100%;
-    height: 40vh; /* Altura ajustada para o carrossel */
-    overflow: hidden;
 }
 
-.carousel img {
-    width: 100%; /* A imagem ocupará toda a largura do contêiner do carrossel */
-    height: 100%; /* A imagem ocupará toda a altura do contêiner do carrossel */
-    object-fit: cover; /* Para manter a proporção da imagem */
-    transition: opacity 1s ease-in-out;
-}
-
-.carousel img.active {
-    opacity: 1;
-}
-
-/* Hero Content */
-.hero-content {
+.hero::before {
+    content: '';
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin: 10px 0;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
-.hero .buttons {
-    margin-top: 20px;
-}
-
-.hero .buttons .button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
+.hero .button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 15px 30px;
     text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.hero .buttons .button:hover {
-    background-color: #45a049;
+.hero .button:hover {
+    background-color: #c0392b;
 }
-
-/* Section Styles */
+/*Formatando as Sections */
 .sections {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #ecf0f1;
 }
 
-.sections section {
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centraliza o conteúdo */
+.sections h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
 }
 
-.sections section img {
-    width: 30%; /* Ajusta a largura da imagem para ocupar 100% do seu contêiner */
-    height: auto; /* A altura será ajustada automaticamente conforme a largura */
-    max-width: 50%; /* Garante que a imagem não ultrapasse o contêiner pai */
-    border-radius: 5px;
-    margin-top: 10px;
+.section {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-/* Form Styles */
-form {
+.section img {
     width: 100%;
-    max-width: 500px;
-    margin: 2rem auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+form {
+    background: #ffffff;
+    border: 1px solid #ddd;
     padding: 2rem;
-    background-color: #f5f5f5;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 500px;
+    margin: 2rem auto;
+    width: 100%;
 }
 
 form label {
-    margin-bottom: 0.5rem;
+    display: block;
+    margin: 10px 0 5px;
     font-weight: bold;
 }
 
 form input, form select, form button {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
+
+
 form button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #e74c3c;
+    color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    padding: 0.75rem;
-    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #45a049;
+    background-color: #c0392b;
 }
 
-.note, .disclaimer {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .sections {
-        flex-direction: column;
-    }
-}
-
-/*Listagem*/
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
 }
 
 table th, table td {
+    padding: 10px;
     border: 1px solid #ddd;
-    padding: 8px;
     text-align: center;
 }
 
 table th {
-    background-color: #f2f2f2;
+    background: #2c3e50;
+    color: #ecf0f1;
 }
 
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+/* Footer Styling */
+footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* General Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }

@@ -5,55 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniDoa - Cadastre sua Instituição</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!--Anderson Navarro e Ana Meneses
+    *tag abaixo usado para chamada do PyScript no HTML
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
+    
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="conheca.html">Conheça</a></li>
-                    <li><a href="doacao.html">Faça sua Doação</a></li>
-                    <li><a href="instituicao.html">Cadastre sua Instituição</a></li>
-                    <li><a href="listagem.html">Itens Disponíveis</a></li>
-                    <li>
-                        <a href="#"><img src="images/br.png" alt="Português" class="flag"></a>
-                        <a href="#"><img src="images/us.png" alt="English" class="flag"></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="conheca.html">Conheça</a></li>
+                <li><a href="doacao.html">Faça sua Doação</a></li>
+                <li><a href="instituicao.html">Cadastre sua Instituição</a></li>
+                <li><a href="listagem.html">Itens Disponíveis</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
         <div class="container">
             <h1>Cadastre sua Instituição</h1>
-            <form onsubmit="return submitInstitutionForm(event)">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-                
+            <form id="institutionForm" onsubmit="return submitInstitutionForm(event)">
+                <label for="institution_name">Nome da Instituição:</label>
+                <input type="text" id="institution_name" name="institution_name" required>
+
                 <label for="address">Endereço:</label>
                 <input type="text" id="address" name="address" required>
-                
+
                 <label for="city">Cidade:</label>
                 <input type="text" id="city" name="city" required>
-                
+
                 <label for="state">Estado:</label>
                 <input type="text" id="state" name="state" required>
 
-                <label for="fone">Telefone:</label>
-                <input type="text" id="fone" name="fone" required>
-                
-                <button type="submit">Cadastrar</button>
+                <label for="contact_person">Pessoa de Contato:</label>
+                <input type="text" id="contact_person" name="contact_person" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Telefone:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <button type="submit">Cadastrar Instituição</button>
             </form>
             <p class="note">Ao clicar em cadastrar, você confirma que aceita os termos de inscrição e que é responsável pelos dados inseridos.</p>
             <p class="disclaimer">Os dados cadastrados serão avaliados por um administrador e verificados com os órgãos competentes da região.</p>
         </div>
     </main>
+
     <footer>
-        <div class="container">
-            <p>&copy; 2024 UniDoa. Todos os direitos reservados.</p>
-        </div>
+        <p>&copy; 2024 UniDoa. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Anderson Navarro e Ana Meneses 
+        O trecho abaixo é a etapa que executa o pyscript para gravar no banco de dados, quando em produção ou hospedado em um server com o banco configurado poderá ser descomentado.
+        Foi mantido assim para demonstração da página no Github.
+
+    <py-script src="script_grava_dados_escola.py"></py-script>
+    -->
     <script>
         function submitInstitutionForm(event) {
             event.preventDefault();
